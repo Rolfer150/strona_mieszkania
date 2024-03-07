@@ -6,28 +6,22 @@ const Navbar = () => {
         
         {/* Logo */}
         <img src={websiteLogo} />
-
+        
         {/* Pasek nawigacyjny */}
-        <ul className="flex justify-center space-x-8 mt-3">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">Features</a>
-            </li>
-            <li>
-                <a href="#">Product</a>
-            </li>
-            <li>
-                <a href="#">Testimony</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
+        <nav className="flex justify-center space-x-8 mt-3">
+        {[
+            ['Home', '/home'],
+            ['Features', '/features'],
+            ['Product', '/product'],
+            ['Testimony', '/testimony'],
+            ['Contact', '/contact'],
+        ].map(([title, url]) => (
+            <a href={url} className="hover:text-white hover:scale-105 transition duration-200">{title}</a>
+        ))}
+        </nav>
 
         {/* Przycisk logowania */}
-        <button className="bg-[#17C2EC] text-white pr-8 pl-8 pt-3 pb-3 rounded-2xl">Login</button>
+        <button className="button-login">Login</button>
     </div>
 };
 
